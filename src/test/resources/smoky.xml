@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoky" verbose="1">
+    <test name="Smoky">
+        <classes>
+            <class name="com.phonbook.test.HomePageTests"/>
+            <class name="com.phonbook.test.LoginTests">
+             <methods>
+                 <exclude name=".*Negative.*"></exclude>
+             </methods>
+            </class>
+
+            <class name="com.phonbook.test.AddContactTests"/>
+            <class name="com.phonbook.test.DeleteContactTests"/>
+        </classes>
+    </test>
+</suite>
