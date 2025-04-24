@@ -1,5 +1,7 @@
 package com.phonbook.test;
 
+import com.phonebook.data.ContactData;
+import com.phonebook.data.UserData;
 import com.phonebook.models.Contact;
 import com.phonebook.models.User;
 import org.testng.Assert;
@@ -19,18 +21,18 @@ public class DeleteContactTests extends Testbase{
 
         app.getUser().clickOnLoginLink();
         //enter email
-        app.getUser().fillRegisterLoginForm(new User().setEmail("bony_s@ukr.net").setPassword("12123Sdf!"));
+        app.getUser().fillRegisterLoginForm(new User().setEmail(UserData.EMAIL).setPassword(UserData.PASSWORD));
         //click on LOGIN Button
         app.getUser().clickOnLoginButton();
         //add contact
         app.getContact().clickOnAddLink();
         app.getContact().fillContactForm(new Contact()
-                .setName("Bony")
-                .setLastName( "Klaida")
-                .setPhone( "0123456789")
-                .setEmail( "bony_s@ukr.net")
-                .setAddress("Berlin")
-                .setDescription( "QA"));
+                .setName(ContactData.Name)
+                .setLastName(ContactData.LastName)
+                .setPhone(ContactData.Phone)
+                .setEmail(ContactData.Email)
+                .setAddress(ContactData.Address)
+                .setDescription(ContactData.Description));
         //click save button
         app.getContact().clickOnSaveButton();
     }
