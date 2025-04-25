@@ -8,6 +8,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class Testbase {
 
@@ -29,8 +30,8 @@ public class Testbase {
     }
 
     @BeforeMethod
-    public void startTest(Method method){
-        logger.info("Start test" + method.getName());
+    public void startTest(Method method, Object[] p){
+        logger.info("Start test" + method.getName() + Arrays.asList(p));
     }
 
     @AfterMethod

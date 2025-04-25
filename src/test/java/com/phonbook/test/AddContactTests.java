@@ -4,12 +4,14 @@ import com.phonebook.data.ContactData;
 import com.phonebook.data.UserData;
 import com.phonebook.models.Contact;
 import com.phonebook.models.User;
+import com.phonebook.utils.DataProviders;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -42,16 +44,9 @@ public class AddContactTests extends Testbase {
 
     }
 
-    @DataProvider
-    public Iterator<Object[]> addNewContact() {
-        List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"Bony","Klaid","0434656756","bony_s@mail.net","Hamburg","QA"});
-        list.add(new Object[]{"Bony","Klaid","0434656745","bon_s@mail.net","Hamburg","QA"});
-        list.add(new Object[]{"Bony","Klaid","043465674537","byny_s@mail.net","Hamburg","QA"});
-        return list.iterator();
-    }
 
-    @Test(dataProvider = "addNewContact")
+
+    @Test(dataProvider = "addNewContact", dataProviderClass = DataProviders.class)
     public void addContactPositiveFromDataProviderTest(String name, String lastName,
                                                        String phone, String email,
                                                        String address,
@@ -66,6 +61,17 @@ public class AddContactTests extends Testbase {
                 .setDescription(description));
         app.getContact().clickOnSaveButton();
         Assert.assertTrue(app.getContact().isContactAdded(name));
+
+    }
+
+
+
+    @Test(dataProvider = "addNewContactWithCSV", dataProviderClass = DataProviders.class)
+    public void addContactPositiveFromDataProviderWithCSVFileTest(Contact contact) {
+        app.getContact().clickOnAddLink();
+        app.getContact().fillContactForm(contact);
+        app.getContact().clickOnSaveButton();
+        Assert.assertTrue(app.getContact().isContactAdded(contact.getName()));
 
     }
 
