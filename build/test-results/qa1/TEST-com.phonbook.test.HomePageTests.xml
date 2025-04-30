@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonbook.test.HomePageTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-28T09:39:36" hostname="MacBook-Pro" time="0.018">
+  <properties/>
+  <testcase name="isHomeComponentPresentTest" classname="com.phonbook.test.HomePageTests" time="0.018"/>
+  <system-out><![CDATA[11:39:36.299 [Test worker] INFO  com.phonbook.test.Testbase -- Start testisHomeComponentPresentTest[]
+11:39:36.304 [Test worker] INFO  com.phonebook.utils.MyListener -- Before find elements By.cssSelector: div:nth-child(2)>div>div>h1
+11:39:36.305 [Test worker] INFO  com.phonebook.utils.MyListener -- ========================
+11:39:36.410 [Test worker] INFO  com.phonebook.utils.MyListener -- List size 1
+11:39:36.412 [Test worker] INFO  com.phonebook.utils.MyListener -- ========================
+11:39:36.415 [Test worker] INFO  com.phonebook.utils.MyListener -- Before find elements By.cssSelector: div:nth-child(2)>div>div>h1
+11:39:36.416 [Test worker] INFO  com.phonebook.utils.MyListener -- ========================
+11:39:36.426 [Test worker] INFO  com.phonebook.utils.MyListener -- List size 1
+11:39:36.427 [Test worker] INFO  com.phonebook.utils.MyListener -- ========================
+11:39:36.436 [Test worker] INFO  com.phonbook.test.Testbase -- PASSED: isHomeComponentPresentTest
+11:39:36.436 [Test worker] INFO  com.phonbook.test.Testbase -- Stop test
+11:39:36.436 [Test worker] INFO  com.phonbook.test.Testbase -- ===============================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
